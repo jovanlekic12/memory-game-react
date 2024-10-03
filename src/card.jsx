@@ -1,8 +1,8 @@
 function Card(props) {
-  const { name, img } = props;
+  const { name, img, shuffleArray } = props;
 
   return (
-    <li className="list__item">
+    <li className="list__item" onClick={shuffleArray}>
       <div className="img__container">
         <img src={img} alt="505" className="img" />
       </div>

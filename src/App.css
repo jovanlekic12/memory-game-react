@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +10,7 @@
 
 .header {
   text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
   padding: 1rem 0;
   background-color: black;
   color: #fff;
@@ -29,12 +33,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: -webkit-transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-  width: 15rem;
+  width: 25rem;
   padding: 1rem;
   text-align: center;
+  transition: all 0.5s;
 }
 
 .list__item:hover {
@@ -50,6 +52,29 @@
 
 .img {
   padding: 0.5rem;
-  max-height: 15rem;
+  max-height: 30rem;
   width: 100%;
+}
+
+.counter__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.counter__container h1 {
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.current__score {
+  background-color: #f39f9f;
+}
+
+.high__score {
+  background-color: rgb(150, 230, 150);
 }
