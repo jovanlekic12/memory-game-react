@@ -1,8 +1,8 @@
 function Card(props) {
-  const { name, img, shuffleArray } = props;
+  const { id, name, img, isClicked, clickHandler } = props;
 
   return (
-    <li className="list__item" onClick={shuffleArray}>
+    <li className="list__item" onClick={() => clickHandler(id)}>
       <div className="img__container">
         <img src={img} alt="505" className="img" />
       </div>
