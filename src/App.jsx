@@ -11,7 +11,10 @@ function App() {
   const isGameCompleted = cards.every((card) => card.isClicked);
 
   function restartHandler() {
-    cards.forEach((card) => (card.isClicked = false));
+    const newCards = cards.map((card) => {
+      return { ...card, isClicked: false };
+    });
+    setCards(newCards);
     setIsOver(false);
     if (currentScore > highScore) {
       setHighScore(currentScore);
