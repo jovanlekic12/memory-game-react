@@ -21,7 +21,7 @@ html {
   gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
   width: fit-content;
-  margin: 2rem auto;
+  margin: 3rem auto;
 }
 
 .list__item {
@@ -77,4 +77,46 @@ html {
 
 .high__score {
   background-color: rgb(150, 230, 150);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.modal {
+  align-items: center;
+  background-color: #eee;
+  border-radius: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  font-size: 3rem;
+  padding: 5rem 3rem;
+}
+
+.modal button {
+  background-color: black;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
 }

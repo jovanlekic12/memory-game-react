@@ -7,11 +7,25 @@ function App() {
   const [cards, setCards] = useState(data);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [isOver, setIsOver] = useState(false);
   const isGameCompleted = cards.every((card) => card.isClicked);
+
+  function restartHandler() {
+    cards.forEach((card) => (card.isClicked = false));
+    setIsOver(false);
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+      setCurrentScore(0);
+      return;
+    } else {
+      setCurrentScore(0);
+    }
+  }
+
   function clickHandler(id) {
     const currentCard = cards.find((card) => card.id === id);
     if (currentCard.isClicked) {
-      alert("gameover");
+      setIsOver(!isOver);
       return;
     }
     const newCards = cards.map((card) => {
@@ -55,6 +69,13 @@ function App() {
           })}
         </ul>
       </main>
+      <div className={isOver || isGameCompleted ? "overlay" : "hide overlay"}>
+        <div className="modal">
+          <h1>Game over!</h1>
+          <p>Your score: {currentScore}</p>
+          <button onClick={restartHandler}>Play again?</button>
+        </div>
+      </div>
     </>
   );
 }
